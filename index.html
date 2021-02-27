@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=UTF-8>
+    <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no;">
+    <title>Cordyceps Heco Defi</title>
+    <link rel=icon href=favicon.ico>
+    <link href=https://cdn.jsdelivr.net/npm/nes.css@2.3.0/css/nes.min.css rel=stylesheet>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/gh/oppfx/ht_cordy/css/app.css" rel="stylesheet">
+   
+    
+    <!-- <link href=./css/bootstrap.min.css rel=stylesheet>
+    <link href=./css/app.css rel=stylesheet> -->
+  </head>
+<body class=bg-theme>
+  <div class="main-load text-center" style="margin-top: 5rem;"> 
+      <div>
+        <img src=./img/logo-1.png style="width: 7rem;">
+      </div>
+      <div class=h2 style="margin-top: 1rem;">
+          Loading...
+      </div>
+  </div>
+  <div class="main-page container hide">
+    <div class=container_main>
+
+   
+    <nav class="navbar navbar-expand-lg navbar-light bg-theme">
+       <!-- <h1 class="float-left">Cordyceps</h1> -->
+       <img class=mr-2 src=./img/logo-1.png style="width: 2rem;">
+       <a class=navbar-brand href=#>Cordyceps <span class=white>Heco</span></a>
+       <button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
+         <span class=navbar-toggler-icon></span>
+       </button>
+       <div class="collapse navbar-collapse mt-1" id=navbarSupportedContent>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active" id=home_li>
+            <a class=nav-link href=#>{{i18n-home}} <span class=sr-only>(current)</span></a>
+          </li>
+          <li class=nav-item id=farms_li>
+            <a class=nav-link href=#/farms>{{i18n-farms}}</a>
+          </li>
+          <!-- <li class="nav-item" id="clear_li">
+            <a class="nav-link"  href="#/clear" >{{i18n-clear}}</a>
+          </li> -->
+          <!-- <li class="nav-item" id="migrate_li">
+            <a class="nav-link"  href="#/migrate" >{{i18n-migrate}}</a>
+          </li> -->
+          <li class=nav-item id=nft_li>
+            <a class=nav-link href=#/nft>NFT</a>
+          </li>
+          <li class=nav-item id=referral_li>
+            <a class=nav-link href=javascript:void(0) onclick=App.showRefModal()>{{i18n-referral}}</a>
+          </li>
+          <li class=nav-item id=about_li>
+            <a class=nav-link href=#/about>{{i18n-about}}</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle nav_lan" href=# id=navbarDropdown role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>
+              English
+            </a>
+            
+            <div class=dropdown-menu aria-labelledby=navbarDropdown>
+              <div class=nes-balloon>
+                <a class="dropdown-item zh-cn" href=# onclick=App.setLanguage(this)><img src=/img/zh.png height=20> 中文</a>
+                <div class=dropdown-divider></div>
+                <a class="dropdown-item en-us" href=# onclick=App.setLanguage(this)><img src=/img/en.png height=20> English</a>
+              </div>
+            </div>
+          </li>
+          <li class=nav-item>
+            <a class=nav-link href=https://cordyceps.exchange target=_blank>NFT{{i18n-exchange}}</a>
+          </li>
+        </ul>
+       
+      </div>
+
+
+      <div class=nav_right>
+        <!-- <a href="https://t.me/CORDYCEPS_Airdrop_Bot" target="_blank"><button class="nes-btn is-warning airdrop_btn" onclick="">{{i18n-getairdrop}}</button></a> -->
+        <button class="nes-btn is-error claim_btn hide" onclick=App.claimPackages()>{{i18n-claimnft}}</button>
+        <button class="nes-btn is-success account_btn" onclick=App.showMyWalletModal()>{{i18n-conwallet}}</button>
+  
+      </div>
+
+      <div class=clearfix></div>
+    </nav>
+
+  
+   
+
+    <!-- home-page -->
+    <div class="custom_page container text-center hide" id=home> 
+      <div class=m-4>
+       <img src=./img/logo-1.png style="width: 10rem;">
+      </div>
+      <div class=h1>
+        {{i18n-hpt1}}
+      </div>
+      <div class="home_top h4">
+        {{i18n-hpt2}}
+      </div>
+      <div class="open_source mt-4">
+        
+      </div>
+      <div class="home_content mt-5">
+        <div class="row justify-content-md-center">
+          <div class="col-12 col-md-4">
+            <div class=nes-balloon>
+              {{i18n-tsupply}}: <span class=home_supply>30000</span> 
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="nes-balloon bg-yellow">
+              {{i18n-cliquidty}}: <span class=home_liquidity>0.00</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row justify-content-md-center">
+          <div class="col-12 col-md-4">
+            <div class="nes-balloon bg-green">
+              {{i18n-mybal}}: <span class=home_balance>--</span>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="nes-balloon bg-orange">
+              {{i18n-bonpool}}: <span class=home_bonus_pool>--</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- farms-page -->
+    <div class="custom_page container text-center hide" id=farms>
+      
+      <div class=m-3>
+        <img src=./img/logo-2.png style="width: 7rem;">
+      </div>
+      <div class=h1>
+        {{i18n-fpt1}}
+      </div>
+      <div class=h4>
+        {{i18n-fpt2}}
+      </div>
+
+      <div class=farms_pool>
+        <div class="row mt-5 farms_pool_list">
+          <div class="h2 text-center w-100 gray">Loading...</div> 
+        
+        </div>
+
+      </div>
+
+    </div>
+<!-- farms_mining page -->
+    <div class="custom_page container text-center hide p-0" id=farms_mining>
+      
+      <div class=m-3>
+        <img class=fm_pool_img src="" style="width: 7rem;">
+      </div>
+      <div class=h1>
+          <strong class=fm_name></strong> 
+       </div>
+       <div class=h4>
+         <span class=fm_name_pre></span> <span class=fm_name></span> {{i18n-fmpt1}}
+      </div>
+      <div class="m-3 fm_lp hide"><a href="" class=fm_lp_url target=_blank><button class=block_btn>{{i18n-add}} <span class=fm_lp_name></span> </button></a></div>
+      <div class="gray h5 m-2">{{i18n-fmpt2}} :<span class=fm_pool_reward>0.00</span></div>
+      <div class="gray m-2">{{i18n-fmpt3}} :<span class="fm_harvest_rate orange">0.00%</span></div>
+      <div class="farms_pool pool_mining">
+        <div class="row mt-5">
+          <div class=col>
+            <div class="nes-balloon pool_card badge-dark">
+              <div class=m-3>
+                <img src=./img/logo-2.png style="width: 60px;">
+              </div>
+               <strong class="m-3 h1 fm_reward">0.0000</strong> 
+              <div class=m-3>
+                {{i18n-fmpt4}}
+              </div>
+              <div class=mt-5>
+                <button class="nes-btn is-success" id=fm_reward_btn onclick=App.harvest()>{{i18n-harvest}}</button>
+              </div>
+            </div>
+          </div>
+          <div class=col>
+            <div class="nes-balloon pool_card bg-orange">
+              <div class=m-3>
+                <img class=fm_pool_img src="" style="width: 60px;">
+              </div>
+               <strong class="m-3 h1 fm_stake_num">0.0000</strong> 
+              <div class=m-3>
+                <span class=fm_name></span> <span class=fm_name_suf></span>
+              </div>
+              <div class=mt-5>
+                <button class="nes-btn is-warning" id=fm_withdraw_btn onclick=App.withdraw()>{{i18n-withdraw}}</button>
+                <button class="nes-btn is-primary" id=fm_stake_btn>{{i18n-stake}}</button>
+                <!-- <button class="nes-btn is-error">Update</button> -->
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+      </div>
+
+    </div>
+
+
+<!-- nft package -page -->
+    <div class="custom_page container text-center hide" id=nft>
+      
+      <!-- <div class="m-4">
+        <img  src="./img/computer.png" style="width: 7rem;">
+      </div> -->
+      <div class="h1 m-4">
+        {{i18n-package}}
+      </div>
+      <div class="container pack_nft_content">
+        <div class="nes-balloon badge-dark w-100 h-100" style="overflow: auto;">
+          
+          <div class="w-100 text-center package_tip">Loading...</div>
+          <div class="row m-2 package_list float-left w-100">
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="h1 m-3" style="margin-top: 5rem!important;">
+        <div class="nes-balloon bg-wheat">{{i18n-cordynft}}</div> 
+      </div>
+      <div class="container pack_nft_content">
+        <div class="nes-balloon bg-wheat w-100 h-100" style="overflow: auto;">
+          
+          <div class="w-100 text-center nft_tip">Loading...</div>
+          <div class="row m-2 nft_list float-left w-100">
+            
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+<!-- about page -->
+    <div class="custom_page container text-center hide" id=about>
+
+      <div class="nes-container rules_content mt-4" style="width: 100%;">
+       <div class="about_title h3 text-center m-4">
+         <strong> {{i18n-about1}}</strong>
+       </div>
+       <div class="text-left mt-2">
+        <div class=h6>{{i18n-about2}}</div> 
+        <div class="h6 mt-3">{{i18n-about3}}</div> 
+        <div class="h6 mt-3">{{i18n-about4}}</div> 
+        <div class="h6 mt-3">{{i18n-about5}}</div> 
+        <div class="h6 mt-3">{{i18n-about6}}</div> 
+        <div class="h6 mt-3">{{i18n-about7}}</div> 
+   
+        <br>
+        <span class=h5>{{i18n-about8}}</span><br>
+        <span class="">{{i18n-about9}}</span><br><br>
+        <span class=h5>{{i18n-about10}}</span><br>
+        <span class="">{{i18n-about11}}</span><br><br>
+        <span class=h5>{{i18n-about14}}</span><br>
+        <span class="">{{i18n-about15}}</span><br><br>
+        <span class=h5>{{i18n-about16}}</span><br>
+        <span class="">{{i18n-about17}}</span><br><br>
+        <span class=h5>{{i18n-about18}}</span><br>
+        <span class="">{{i18n-about19}}</span><br><br>
+        <span class=h5>{{i18n-about20}}</span><br>
+        <span class="">{{i18n-about21}}</span><br><br>
+        <span class=h5>{{i18n-about22}}</span><br>
+        <span class="">{{i18n-about23}}</span><br><br>
+       </div>
+      </div>
+
+    </div>
+  
+
+    
+  </div>
+    <div class="footer container card-body text-center hide">
+      
+      <div class=mt-1>
+        <a class=gray href=https://docs.cordyceps.finance target=_blank>GitBook</a>
+        <a class="gray ml-3" href=https://twitter.com/Cordyceps_Defi target=_blank>Twitter</a>
+        <a class="gray ml-3" href=https://t.me/cordyceps_finance target=_blank>Telegram</a>
+        <a class="gray ml-3" href=https://discord.gg/fJbpNEXCY6 target=_blank>Discord</a>
+      </div>
+    </div>
+
+
+  
+<!--wallet modal -->
+<div class="modal fade" id=walletModal role=dialog aria-labelledby=walletModalLabel aria-hidden=true>
+  <div class="modal-dialog text-center">
+     <div class="nes-balloon bg-orange py-4">
+       <div class="md_hide p-3">
+         <div class="nes-balloon badge-dark py-3" style="height: 15rem;">
+           <div class=h3> MetaMask</div>
+           <div class=m-4>
+             <img src=./img/metamask.svg style="width: 4rem;">
+           </div>
+           <div>
+             <button class="nes-btn is-success mt-2" onclick="App.connectWallet(this,'MetaMask')">{{i18n-conwallet}}</button>
+           </div>
+
+         </div>
+       </div>
+       <div class="pc_hide p-2">
+         <div class="nes-balloon badge-dark py-3 mt-3" style="height: 15rem;">
+           <div class=h4>TokenPocket</div>
+           <div class=m-4>
+             <img src=./img/tp.png class=rounded style="width: 4rem;">
+           </div>
+           <div>
+             <button class="nes-btn is-primary mt-3" onclick="App.connectWallet(this,'TokenPocket')">{{i18n-connect}} TokenPocket</button>
+           </div>
+           
+           
+         </div>
+         <div class="nes-balloon badge-dark py-3 mt-3" style="height: 15rem;">
+           <div class=h4> BitKeep</div>
+           <div class=m-4>
+             <img src=./img/bk.png class=rounded style="width: 4rem;">
+           </div>
+           <div>
+             <button class="nes-btn is-success mt-3" onclick="App.connectWallet(this,'BitKeep')">{{i18n-connect}} BitKeep</button>
+           </div>
+    
+
+         </div>
+        </div>
+        <div class=my-3>
+            <button class="nes-btn is-error m-2" data-dismiss=modal>{{i18n-close}}</button>
+        </div>
+     </div>
+   </div>
+ </div>
+
+
+<!--referral modal -->
+    <div class="modal fade" id=referralModal role=dialog aria-labelledby=referralModalLabel aria-hidden=true>
+       <div class="modal-dialog text-center">
+          <div class="nes-balloon bg-orange">
+            <div class=referral_link>
+
+              <div class=h5>{{i18n-reflink}}</div>
+              <div class="m-3 gray">({{i18n-rmt1}})</div>
+              <div class="refer_link hide">
+                <div class=m-4 id=ref_link>
+                  
+                </div>
+                 <button class="nes-btn is-primary ref_link_btn mt-2" onclick="App.copyLink('ref_link')">　{{i18n-copy}}　</button>
+              </div>
+              <div class=refer_regis>
+                <div class="refer_regis_log m-4">
+                  {{i18n-rmt2}}
+                </div>
+                 <button class="nes-btn is-primary mt-2" onclick=App.register()>{{i18n-regis}}</button>
+              </div>
+            </div>
+            <div class=referral_bonus>
+
+              <div class="h5 mt-5">{{i18n-refbon}}</div>
+              <div class="m-2 gray">({{i18n-refnum}} <span class=ref_num></span>)</div>
+              <div class="ref_bonus h3 m-3">
+                0.00
+              </div>
+               <button class="nes-btn is-success ref_bonus_btn is-disabled mt-2" disabled=disabled onclick=App.withdrawBonus()>{{i18n-withdraw}}</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+<!--my wallet modal -->
+    <div class="modal fade" id=myWalletModal role=dialog aria-labelledby=myWalletModalLabel aria-hidden=true>
+       
+       <div class="modal-dialog text-center">
+          <div class="nes-balloon bg-green">
+            <div class=h5>{{i18n-myacc}} #<span class=mywallet_id> --</span></div>
+            <div class=m-4>
+              <img src=./img/logo-1.png style="width: 5rem;">
+            </div>
+            <div class="h1 mywallet_bal">0.000</div>
+            <div class="">{{i18n-corbal}}</div>
+            <button class="nes-btn is-error mt-5" data-dismiss=modal>{{i18n-close}}</button>
+           
+          </div>
+        </div>
+      </div>
+
+<!--token stake modal -->
+    <div class="modal fade" id=stakeModal role=dialog aria-labelledby=stakeModalLabel aria-hidden=true>
+       
+       <div class="modal-dialog text-center">
+          <div class="nes-balloon bg-green">
+            <div class=h5>{{i18n-stake}}</div>
+
+            <div class=mt-5><span class=sm_stake_name></span> {{i18n-balance}}: <span class=sm_stake_bal>11</span></div>
+            <div class=mb-3>
+              <input class="nes-input p-3 badge-dark mt-4 text-center sm_stake_input" placeholder={{i18n-entamount}} type=text>
+            </div>
+            <div class=mt-5>
+              <button class="nes-btn is-error mr-3" onclick=App.setStakeMax()>{{i18n-max}}</button>
+              <button class="nes-btn is-primary sm_stake_btn" onclick=App.stake()>{{i18n-stake}}</button>
+
+            </div>
+           
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+<!--nft-select- modal -->
+      <div class="modal fade" id=nftSelectModal tabindex=-1 role=dialog aria-labelledby=nftSelectModalLabel aria-hidden=true>
+          <div class="modal-dialog modal-lg modal-dialog-centered" style="justify-content: center">
+            <div class="nes-balloon bg-wheat text-center">
+              <div class=h5>{{i18n-select}} NFT ({{i18n-max}} 5)</div>
+              <div class="bg-green w-100" style="height: 28rem; overflow: auto;">
+                
+                <div class="w-100 mt-3 text-center nsm_tip">Loading...</div>
+                <div class="row m-2 nsm_list_stake float-left w-100">
+
+                </div>
+                <div class="row m-2 nsm_list float-left w-100">
+                  <!-- <div class="col-12 col-md-4">
+                      <div class="">
+                        <div class="m-2">
+                          <img class=""src="./img/cordyceps/1.png"width="50%">
+                        </div>
+                        <div class="mt-1"><span>'+cordy._name+' #102</span></div>
+                        <div>
+                          <button class="nes-btn is-warning mt-2 h7" onclick="App.clickStake()">Stake</button>
+                        </div>
+
+                      </div>
+                  </div> -->
+                </div>
+              </div>
+              <div>
+                <button class="nes-btn is-error mt-3" data-dismiss=modal>{{i18n-close}}</button>
+              </div>
+             
+            </div>
+
+          </div>
+        </div>
+<!--package modal -->
+      <div class="modal fade" id=packModal tabindex=-1 role=dialog aria-labelledby=packModalLabel aria-hidden=true>
+          <div class="modal-dialog modal-dialog-centered" style="justify-content: center">
+            <div class="nes-balloon bg-yellow text-center">
+              <div class=h5>{{i18n-package}}</div>
+              <div class=m-3>
+               <div class="h4 pm_content">
+                <div class=m-2>
+                  <img class=pm_img src="" width=50%>
+                </div>
+                <div class="m-2 h5">
+                  <span class=pm_id>#</span><br>
+                  <span class=pm_name></span> <br>
+                  <span class="gray small">({{i18n-pmt1}}:<span class=pm_lvids></span>)</span>
+                </div>
+                <div class="">
+                  <button class="nes-btn is-success mt-3" onclick=App.openPackage()>{{i18n-open}}</button>
+                  <div class="pm_open_tip red small mt-3"></div>
+                </div>
+                <div class="mt-5 h5">
+                  <span class="">{{i18n-pmt2}}</span>
+                  <input class="nes-input bg-yellow pm_send_input mt-4" placeholder="Wallet Address" type=text>
+                  <div class="pm_send_tip red mt-4 small"></div>
+                  <button class="nes-btn is-error mt-4 h4" onclick=App.sendPackage()>{{i18n-send}}</button>
+                </div>
+               </div>
+              </div>
+             
+             
+            </div>
+
+          </div>
+        </div>
+
+<!--nft modal -->
+      <div class="modal fade" id=nftModal tabindex=-1 role=dialog aria-labelledby=nftModalLabel aria-hidden=true>
+          <div class="modal-dialog modal-dialog-centered" style="justify-content: center">
+            <div class="nes-balloon bg-yellow text-center">
+              <div class=h5>{{i18n-cordynft}}</div>
+              <div class=m-3>
+               <div class="h4 nm_content">
+                <div class=m-2>
+                  <img class=nm_img src="" width=50%>
+                </div>
+                <div class="mt-4 small">
+                  <form>
+                    <div class=row>
+                      <label class="col-5 col-sm-5 text-right"> ID:</label>
+                      <label class="col-7 col-sm-7 nm_id text-center"></label>
+                    </div>
+                    <div class=row>
+                      <label class="col-5 col-sm-5 text-right">{{i18n-name}}:</label>
+                      <label class="col-7 col-sm-7 nm_name text-center"></label>
+                    </div>
+                    <div class=row>
+                      <label class="col-5 col-sm-5 text-right">{{i18n-level}}:</label>
+                      <label class="col-7 col-sm-7 nm_level text-center"></label>
+                    </div>
+                    <div class=row>
+                      <label class="col-5 col-sm-5 text-right">{{i18n-quality}}:</label>
+                      <label class="col-7 col-sm-7 nm_quality text-center"></label>
+                    </div>
+                    <div class=row>
+                      <label class="col-5 col-sm-5 text-right">{{i18n-birth}}:</label>
+                      <label class="col-7 col-sm-7 nm_birth text-center"></label>
+                    </div>
+                  </form>
+                </div>
+               
+                <div class="mt-5 h5">
+                  <span class="">{{i18n-pmt2}}</span>
+                  <input class="nes-input bg-yellow nm_send_input mt-4" placeholder="Wallet Address" type=text>
+                  <div class="nm_send_tip red mt-4 small"></div>
+                  <button class="nes-btn is-success mt-4 h4" onclick=App.sendCordyNFT()>{{i18n-send}}</button>
+                </div>
+               </div>
+              </div>
+             
+             
+            </div>
+
+          </div>
+        </div>
+<!-- modal -->
+      <div class="modal fade" id=topModal tabindex=-1 role=dialog aria-labelledby=topModalLabel aria-hidden=true>
+          <div class="modal-dialog text-center">
+            <div class="nes-balloon badge-dark">
+              <div class=h5>{{i18n-prompt}}</div>
+              <div class=m-4>
+               <div class="h4 top_tip_content">
+
+               </div>
+              </div>
+             
+              <button class="nes-btn is-error mt-5" data-dismiss=modal>{{i18n-close}}</button>
+             
+            </div>
+
+          </div>
+        </div>
+
+
+
+  </div>
+
+
+
+
+  <!-- <script src=js/jquery-2.1.4.min.js></script>
+  <script src=js/bootstrap-4.0.min.js></script>
+  <script src=js/language.js></script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@2.1.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/oppfx/ht_cordy@latest/js/language.js"></script>
+  <script src=https://cdn.jsdelivr.net/gh/oppfx/ht_cordy/js/path.js?a8997ff7891b1b6bf9a6></script></body>
+</html>
+

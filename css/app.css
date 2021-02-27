@@ -1,0 +1,286 @@
+@font-face {
+  font-family: 'zpix';
+  /* src:url('../fonts/zpix-v3.1.1.ttf') format('truetype'); */
+  src:url('https://cdn.jsdelivr.net/gh/oppfx/ht_cordy@latest/fonts/zpix-v3.1.1.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+div::-webkit-scrollbar {
+  display: none;
+}
+html{
+	height: 100%;
+}
+.pc_hide{
+  display: none;
+}
+body {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 2%;
+  height: 100%;
+  font-family: "zpix";
+  
+}
+h1,h2{
+  color: #fff;
+}
+
+/* reset nes */
+.nes-btn{
+  color: #000 !important;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color:transparent;
+  /* background-clip: padding-box; */
+  border: 1px solid transparent;
+  /* border-radius: 0.25rem; */
+}
+.modal .nes-balloon{
+  width: 80%;
+  pointer-events: auto;
+}
+.nes-balloon {
+  padding: 1rem;
+}
+
+/*--reset nes end--*/
+.hide{
+  display: none;
+}
+
+.bg-theme{
+  background-color: #8BAC62;
+}
+.bg-purple{
+  background-color: #d076fa;
+}
+.bg-green{
+  background-color: #92cc41;
+}
+.bg-orange{
+  background-color: #e76e55;
+}
+
+.bg-yellow{
+  background-color: #f7d51d;
+}
+.bg-blue{
+  background-color: #209cee;
+}
+.bg-brown{
+  background-color: #8B572A;
+}
+.bg-dark{
+  background-color: #212529;
+}
+.bg-wheat{
+  background-color: #f5deb3;
+}
+
+.btn-mine{
+  color:#FFF;
+  margin-left: 10px;
+  background-color: #2C3E50;
+}
+.btn-mine:hover{
+  background-color: #49657E;
+}
+.white{
+  color: #fff;
+}
+.black {
+  color: black;
+}
+.theme{
+  color: #DA1031;
+}
+.orange{
+  color: #cf644e;
+}
+.red{
+  color: #F00;
+}
+.yellow{
+  color: #FDC02F;
+}
+.green{
+  color:#78c014;
+}
+.gray{
+  color:rgba(0,0,0,.3);
+}
+a:hover{
+  color: #000;
+}
+.mt--2{
+  margin-top:-.5rem!important
+}
+.ml--2{
+  margin-left:-.5rem!important
+}
+.ml--4{
+  margin-left:-1rem!important
+}
+.h7{
+  font-size: 0.75rem;
+}
+/* //project */
+
+.clear_content{
+  width: 100%;
+  height: 700px;
+  color: #92cc41;
+  overflow: auto;
+}
+.block_btn{
+  border: 4px solid #000;
+  background-color: transparent;
+}
+.block_btn:focus{outline:0;}
+
+.block_btn:hover{
+  background-color: rgba(0,0,0,.3);
+}
+
+.footer{
+  color: #ddd;
+  margin-top: 50px;
+}
+
+
+.home_content .nes-balloon{
+  width: 18rem;
+}
+.farms_pool .row{
+  padding: 0 2rem;
+}
+.farms_pool .pool_card{
+  width: 17rem;
+  height: 22rem;
+  /* text-overflow:ellipsis;
+  white-space:nowrap; */
+  overflow: hidden;
+ 
+
+}
+.pool_mark{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0;
+  z-index: 2;
+  width: 2rem ;
+  /* height: .3rem; */
+}
+.pack_nft_content{
+  width: 80%;
+  height: 40rem;
+}
+.pack_nft_content .pnl_col:hover{
+  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzElEQVRYR+2X0Q6AIAhF5f8/2jYXZkwEjNSVvVUjDpcrGgT7FUkI2D9xRfQETwNIiWO85wfINfQUEyxBG2ArsLwC0jioGt5zFcwF4OYDPi/mBYKm4t0U8ATgRm3ThFoAqkhNgWkA0jJLvaOVSs7j3qMnSgXWBMiWPXe94QqMBMBc1VZIvaTu5u5pQewq0EqNZvIEMCmxAawK0DNkay9QmfFNAJUXfgGgUkLaE7j/h8fnASkxHTz0DGIBMCnBeeM7AArpUd3mz2x3C7wADglA8BcWMZhZAAAAAElFTkSuQmCC) 14 0, pointer;
+  background-color: rgba(0,0,0,.3);
+}
+.clear_content .blink{
+  animation: blink 1s infinite steps(1, start);
+}
+/*cursor blink*/
+@keyframes blink {
+  0%, 100% {
+      /* background-color: #92cc41; */
+      color: transparent;
+  }
+  50% {
+      /* background-color: #212529; not #aaa because it's seem there is Google Chrome bug */
+      color: #92cc41;
+  }
+}
+
+
+@media(max-width:768px){
+	body {
+    margin-left: 0;
+    margin-right: .5%;
+    margin-top: 0;
+  }
+  .pc_hide{
+    display: block;
+  }
+  .md_hide{
+    display: none;
+  }
+  .navbar {
+    padding: 1rem 0.5rem;
+  }
+  .home_content .nes-balloon{
+    width: 95%;
+  }
+  .pack_nft_content{
+    width: 100%;
+    height: 40rem;
+  }
+  .nav_right{
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .farms_pool .pool_card{
+    width: 100%;
+  }
+  .farms_pool .row{
+    padding: .2rem;
+    padding-right: .9rem;
+  }
+  
+  .home_content .nes-balloon{
+    width: 80%;
+  }
+  .nes-balloon {
+    border-image-slice: 3;
+    border-image-width: 3;
+    border-image-repeat: space;
+    
+    border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="8" height="8" xmlns="http://www.w3.org/2000/svg"><path d="M3 1 h1 v1 h-1 z M4 1 h1 v1 h-1 z M2 2 h1 v1 h-1 z M5 2 h1 v1 h-1 z M1 3 h1 v1 h-1 z M6 3 h1 v1 h-1 z M1 4 h1 v1 h-1 z M6 4 h1 v1 h-1 z M2 5 h1 v1 h-1 z M5 5 h1 v1 h-1 z M3 6 h1 v1 h-1 z M4 6 h1 v1 h-1 z" fill="rgb(0,0,0)" /></svg>');
+    border-image-outset: 2;
+    position: relative;
+    display: inline-block;
+    padding: 1rem;
+    margin: 8px;
+    margin-bottom: 30px;
+  }
+  .nes-btn {
+    border-image-slice: 2;
+    border-image-width: 2;
+    border-image-repeat: space;
+    border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(1,1,1)" /></svg>');
+    border-image-outset: 2;
+  
+  }
+  .nes-input{
+    border-image-repeat: space;
+  
+  }
+
+  .pool_mark{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0;
+    width: 2rem ;
+    /* height: .3rem; */
+  }
+
+}
